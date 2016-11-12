@@ -17,7 +17,12 @@ class Vehicle(object):
 
     def purchase_price(self):
         return self.sale_price() - (self.purchase_multiplier * self.miles)
-
+        
+    def interest_rate(self):
+        return self.interest
+        
+    def lease_rate(self):
+        return self.lease
 
 class Car(Vehicle):
    
@@ -25,7 +30,8 @@ class Car(Vehicle):
         Vehicle.__init__(self, maker, model, year, base_price, miles)
         self.sale_multiplier = 1.2
         self. purchase_multiplier = 0.004
-        self.interest_rate = 1.07
+        self.interest = 1.07
+        self.lease = 1.2
         
     
 
@@ -34,7 +40,8 @@ class Motorcycle(Vehicle):
         Vehicle.__init__(self, maker, model, year, base_price, miles)
         self.sale_multiplier = 1.1
         self.purchase_multiplier = 0.009
-        self.interest_rate = 1.03
+        self.interest = 1.03
+        self.lease = 1
         
   
         
@@ -47,5 +54,6 @@ class Truck(Vehicle):
         Vehicle.__init__(self, maker, model, year, base_price, miles)
         self.sale_multiplier = 1.6
         self.purchase_multiplier = 0.02
-        self.interest_rate = 1.11
+        self.interest = 1.11
+        self.lease = 1.7
 
